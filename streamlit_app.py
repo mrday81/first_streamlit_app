@@ -24,6 +24,9 @@ streamlit.dataframe(fruits_to_show)
 
 # added header
 streamlit.header("Fruityvice Fruit Advice!")
+# display response
+fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+streamlit.write('The user entered ', fruit_choice)
 
 # display fruity
 import requests
@@ -34,6 +37,3 @@ fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # write your own comment - what does this do?
 streamlit.dataframe(fruityvice_normalized)
 
-# display response
-fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
-streamlit.write('The user entered ', fruit_choice)
